@@ -148,7 +148,7 @@ The main point is, before starting to code, spend time:
 2. finding high-level solutions
 3. iterating on the solution by refactoring
 
-Regardless of you feelings about Test Driven Development (TDD), a major point for it's use in an agile development environment is to make us consider the behavior of the feature before we start writing code.
+Regardless of you feelings about Test Driven Development (TDD), a major point for its use in an agile development environment is to make us consider the behavior of the feature before we start writing code.
 
 In relation to RGR, we generally don't want to spend too much time on each step.  It's better to make small improvements and pass the buck on to the next team.  It's not about showing off, it's about learning how to problem solve and collaborate.
 

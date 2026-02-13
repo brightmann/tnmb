@@ -30,7 +30,7 @@ First, here is a brief overview of the subject.
 
 *Algorithms are an unambiguous specification of how to solve a class of problems. It is a set of rules that precisely define a sequence of operations.*
 
->[Fun fact] The etymology of the term came from the name of a Persian scientist and polymath Muḥammad ibn Mūsā al-Khwārizmī who wrote *kitāb al-ḥisāb al-hindī* ("Book of Indian computation") around 825 AD.  He is also credited for the term algebra comes from *Al-Jabr* in the same book (meaning "completion" or "rejoining").  Readers might know that our number system is also based on the Hindu–Arabic numeral system (or decimal system) which replaced the cumbersome Roman numerals in the early 16thj century.
+>[Fun fact] The etymology of the term came from the name of a Persian scientist and polymath Muḥammad ibn Mūsā al-Khwārizmī who wrote *kitāb al-ḥisāb al-hindī* ("Book of Indian computation") around 825 AD.  He is also credited for the term algebra comes from *Al-Jabr* in the same book (meaning "completion" or "rejoining").  Readers might know that our number system is also based on the Hindu–Arabic numeral system (or decimal system) which replaced the cumbersome Roman numerals in the early 16th century.
 
 ### Why know them?
 
@@ -1245,12 +1245,12 @@ In this section I present a list from the amazing Aman Manazir who I mentioned e
 
 His take, like mine, is that there are too many DSA to go through them all in one lifetime, so we have to focus on the most popular.
 He also mentions an issue with just studying them which he calls the "cook book trap".
-This means that if you just memorize recipes so your prepared to cook anything you will fail to cook anything, or something like that.
+This means that if you just memorize recipes so your're prepared to cook anything you will fail to cook anything, or something like that.
 He says you have to crack a few eggs and get your hands dirty.
 
 This is commonly know as learn by doing.
 He recommends only learning a particular DSA after you try and fail at solving a problem.
-This kind of the way I go.  I try the brute force method, learn from that, then cheat and look up the optimized solution as I have shown above.
+I also believe this is the way I go.  I admit I usually try the brute force method, learn from that, refactor a bit, then finally cheat and look up the optimized solution.
 
 Here is suggested list of leetcode problems to solve.
 I have left off the difficulty ratings, so if you want to see those, sign up for his email list.
@@ -1268,28 +1268,28 @@ I have left off the difficulty ratings, so if you want to see those, sign up for
 
 ### TWO POINTERS
 
-- 09 [Valid Palindrome](..)
-- 10 [Two Sum II Input Array Is Sorted](.)
-- 11 [3Sum](.)
-- 12 [Container With Most Water](.)
+- 09 Valid Palindrome
+- 10 Two Sum II Input Array Is Sorted
+- 11 3Sum
+- 12 Container With Most Water
 
 ### SLIDING WINDOW
 
-- 13 [Best Time to Buy And Sell Stock](.)
-- 14 [Longest Substring Without Repeating Characters](.)
-- 15 [Longest Repeating Character Replacement](.)
+- 13 Best Time to Buy And Sell Stock
+- 14 Longest Substring Without Repeating Characters
+- 15 Longest Repeating Character Replacement
 
 ### STACK
 
-- 16 [Valid Parentheses](.)
-- 17 [Min Stack](.)
-- 18 [Daily Temperatures](.)
+- 16 Valid Parentheses
+- 17 Min Stack
+- 18 Daily TemperaFtures
 
 ### BINARY SEARCH
 
-- 19 [Binary Search](.)
-- 20 [Find Minimum in Rotated Sorted Array](.)
-- 21 [Search in Rotated Sorted Array](.)
+- 19 Binary Search
+- 20 Find Minimum in Rotated Sorted Array
+- 21 Search in Rotated Sorted Array
 
 ### LINKED LIST
 
