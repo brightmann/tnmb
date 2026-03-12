@@ -547,11 +547,13 @@ It's more complex to implement and maintain than necessary for basic leader boar
 
 We will come back to the leader board discussion later.  But first, lets dig into algorithms.
 
-## Algorithms (how to solve a class of problems)
+## Algorithm types
 
 An algorithm is an unambiguous specification of how to solve a class of problems with a set of rules or steps that define a sequence of operations.
 
-The list is marked for beginner and advanced and grouped by topics or by by paradigms.
+They provide methods on how to solve a class of problems.
+
+The [Trekhleb list](https://github.com/trekhleb/javascript-algorithms/tree/master) is marked for beginner and advanced and grouped by topics or by paradigms.
 
 ### Topic groupings
 
@@ -571,6 +573,10 @@ The list is marked for beginner and advanced and grouped by topics or by by para
 - Un-categorized
 
 ### Paradigm groupings
+
+These groupings are described like this:
+
+*An algorithmic paradigm is a generic method or approach which underlies the design of a class of algorithms. It is an abstraction higher than the notion of an algorithm, just as an algorithm is an abstraction higher than a computer program.*
 
 - Brute Force - look at all the possibilities and selects the best solution
 - Greedy - choose the best option at the current time, without any consideration for the future
@@ -1242,6 +1248,7 @@ Someone asks: *How does the HashMap solution work if the elements are not unique
 ## Pareto Problem Set
 
 In this section I present a list from the amazing Aman Manazir who I mentioned earlier.
+He has a curated list of problems called the [NeetCode 150](https://github.com/dipjul/NeetCode-150/tree/main).
 
 His take, like mine, is that there are too many DSA to go through them all in one lifetime, so we have to focus on the most popular.
 He also mentions an issue with just studying them which he calls the "cook book trap".
