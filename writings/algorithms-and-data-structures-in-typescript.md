@@ -1260,7 +1260,7 @@ He recommends only learning a particular DSA after you try and fail at solving a
 I also believe this is the way I go.  I admit I usually try the brute force method, learn from that, refactor a bit, then finally cheat and look up the optimized solution.
 
 Here is suggested list of leetcode problems to solve.
-I have left off the difficulty ratings, so if you want to see those, sign up for his email list.
+I have left off the difficulty ratings, so if you want to see those, sign up for his email list.  I only have links for some of these, but if you search the [problem set](https://leetcode.com/problemset/) you should be able to find what your are looking for.
 
 ### ARRAYS & HASHING
 
@@ -1271,13 +1271,13 @@ I have left off the difficulty ratings, so if you want to see those, sign up for
 - 05 [Top K Frequent Elements](https://github.com/dipjul/NeetCode-150/blob/main/01.%20Arrays%20%26%20Hashing/05.TopKElements.md)
 - 06 [Valid Sudoku](https://github.com/dipjul/NeetCode-150/blob/main/01.%20Arrays%20%26%20Hashing/07.ValidSodoku.md)
 - 07 [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/description/)
-- 08 [Longest Consecutive Sequence](...)
+- 08 [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)
 
 ### TWO POINTERS
 
 - 09 Valid Palindrome
 - 10 Two Sum II Input Array Is Sorted
-- 11 3Sum
+- 11 3 Sum
 - 12 Container With Most Water
 
 ### SLIDING WINDOW
@@ -1290,7 +1290,7 @@ I have left off the difficulty ratings, so if you want to see those, sign up for
 
 - 16 Valid Parentheses
 - 17 Min Stack
-- 18 Daily TemperaFtures
+- 18 Daily Temperatures
 
 ### BINARY SEARCH
 
@@ -1320,23 +1320,23 @@ I have left off the difficulty ratings, so if you want to see those, sign up for
 - 36 Binary Tree Right Side View
 - 37 Count Good Nodes In Binary Tree
 - 38 Validate Binary Search Tree
-- 39 Kth Smallest Element In a Bst
+- 39 Kth Smallest Element In a Set
 
 ### HEAP/PRIORITY QUEUE
 
-40 Kth Largest Element In a Stream
-41 Last Stone Weight
-42 Kth Largest Element in An Array
+- 40 Kth Largest Element In a Stream
+- 41 Last Stone Weight
+- 42 Kth Largest Element in An Array
 
 ### GRAPHS
 
-43 Number of Islands
-44 Max Area of Island
-45 Clone Graph
-46 Pacific Atlantic Water Flow
-47 Surrounded Regions
-48 Course Schedule
-49 Course Schedule II
+- 43 Number of Islands
+- 44 Max Area of Island
+- 45 Clone Graph
+- 46 Pacific Atlantic Water Flow
+- 47 Surrounded Regions
+- 48 Course Schedule
+- 49 Course Schedule II
 
 These problems are all on the [NeetCode-150](https://github.com/dipjul/NeetCode-150) GitHub repo.
 
