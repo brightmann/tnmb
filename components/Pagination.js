@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-export const POSTS_PER_PAGE = 5
+export const POSTS_PER_PAGE = 6
 
 export function getTotalPages(totalPosts) {
   return Math.max(1, Math.ceil(totalPosts / POSTS_PER_PAGE))
