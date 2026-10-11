@@ -1,10 +1,10 @@
 import React from 'react'
-import matter from 'gray-matter'
 import Link from 'next/link'
 import Head from 'next/head'
-import { Row, Col } from 'react-flexbox-grid'
+import { Row, Col } from '../components/flexbox-grid'
 
 import Layout from '../components/Layout'
+import { writings as allWritings } from '../lib/generated-posts'
 
 function formatDate(date) {
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -18,8 +18,8 @@ function Homepage({ writings }) {
     <>
       <Layout isHomepage>
         <Row>
-          {writings.map(({ document, slug }) => {
-            const { data: { title, date } } = document
+          {writings.map(({ data, slug }) => {
+            const { title, date } = data
 
             return (
               <Col md={6} key={slug}>
@@ -47,26 +47,15 @@ function Homepage({ writings }) {
   )
 }
 
-Homepage.getInitialProps = async(context) => {
-  const writings = (context => {
-    const keys = context.keys()
-    const values = keys.map(context)
-    const data = keys.map((key, index) => {
-      const slug = key
-        .replace(/^.*[\\\/]/, '')
-        .split('.')
-        .slice(0, -1)
-        .join('.')
-      const value = values[index]
-      const document = matter(value.default)
-      return { document, slug }
-    })
-
-    return data.slice().sort((a, b) => new Date(b.document.data.date) - new Date(a.document.data.date))
-  })(require.context('../writings', true, /\.md$/))
+export async function getServerSideProps() {
+  // writings are pre-generated at build time (scripts/build-content.mjs),
+  // sorted newest-first. Only slug + frontmatter needed for the listing.
+  const writings = allWritings.map(({ slug, data }) => ({ slug, data }))
 
   return {
-    writings,
+    props: {
+      writings,
+    },
   }
 }
 export default Homepage

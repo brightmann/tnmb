@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import simpleIcons from 'simple-icons'
 import Head from 'next/head'
-import { Row, Col } from 'react-flexbox-grid'
+import { Row, Col } from '../components/flexbox-grid'
 import dynamic from 'next/dynamic'
-import { config } from 'react-spring'
+// react-spring config.gentle inlined (react-spring is not a direct dep)
+const gentleSpringConfig = { mass: 1, tension: 120, friction: 14 }
 
 const TextTransition = dynamic(() => import("react-text-transition"), {
   ssr: false
@@ -51,7 +52,7 @@ function About() {
             Timothy {' '}
             <TextTransition
               text={SKILLS[index % SKILLS.length]}
-              springConfig={config.gentle}
+              springConfig={gentleSpringConfig}
               style={{ display: 'inline-block' }}
             />
           </h1>

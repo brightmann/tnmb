@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import SyntaxHighlighter from 'react-syntax-highlighter'
-import { anOldHope } from 'react-syntax-highlighter/dist/esm/styles/hljs'
+import anOldHope from 'react-syntax-highlighter/dist/esm/styles/hljs/an-old-hope.js'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { Copy, Check } from 'react-feather'
 
@@ -94,7 +94,17 @@ class CodeBlock extends PureComponent {
   }
 
   render() {
-    const { language, value } = this.props;
+    // react-markdown v9 passes {node, inline, className, children} to the
+    // `code` component. className looks like "language-js" (possibly with
+    // the old ":lines" suffix, e.g. "language-js:1,2-3"); children is the
+    // code string. Inline code renders as a plain <code> element.
+    const { inline, className, children } = this.props;
+    if (inline) {
+      return <code className={className}>{children}</code>;
+    }
+    const match = /language-([^\s]+)/.exec(className || '');
+    const language = match ? match[1] : '';
+    const value = String(children).replace(/\n$/, '');
     const { addLines, removeLines, updateLines, copiedToClipboard, displayCopyButton } = this.state
 
     return (

@@ -1,6 +1,7 @@
 import Head from 'next/head'
 
 import '../styles/base.css'
+import '../styles/flexboxgrid.css'
 
 function MyApp({ Component, pageProps }) {
   const og = pageProps.data?.og

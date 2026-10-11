@@ -1,28 +1,36 @@
 import React from 'react'
-import matter from 'gray-matter'
 import ReactMarkdown from 'react-markdown'
+import rehypeRaw from 'rehype-raw'
+
+import { posts } from '../../lib/generated-posts'
 
 export default function PostTemplate({ content, data }) {
   // This holds the data between `---` from the .md file
   const frontmatter = data
-  
+
   return (
     <div>
       <h1>{frontmatter.title}</h1>
 
-      <ReactMarkdown source={content} />
+      <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+        {content}
+      </ReactMarkdown>
     </div>
   )
 }
 
-PostTemplate.getInitialProps = async (context) => {
-  const { slug } = context.query
-  // Import our .md file using the `slug` from the URL
-  const content = await import(`../../content/${slug}.md`)
+export async function getServerSideProps(context) {
+  const { slug } = context.params
+  const post = posts.find(p => p.slug === slug)
 
-  // Parse .md data through `matter`
-  const data = matter(content.default)
+  if (!post) {
+    return { notFound: true }
+  }
 
-  // Pass data to the component props
-  return { ...data }
+  return {
+    props: {
+      content: post.content,
+      data: post.data,
+    },
+  }
 }

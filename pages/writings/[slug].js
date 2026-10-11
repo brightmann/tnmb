@@ -1,12 +1,13 @@
 import React from 'react'
-import matter from 'gray-matter'
 import ReactMarkdown from 'react-markdown'
+import rehypeRaw from 'rehype-raw'
 import Link from 'next/link'
 import Head from 'next/head'
 import ProgressBar from 'react-scroll-progress-bar'
 
 import Layout from '../../components/Layout'
 import CodeBlock from '../../components/CodeBlock'
+import { writings } from '../../lib/generated-posts'
 
 function Writing({ content, data }) {
   const frontmatter = data
@@ -28,28 +29,31 @@ function Writing({ content, data }) {
           </Link>
           <h1 className="writing-title-h1">{title}</h1>
 
-          <div className="author">
-            <a href={`https://twitter.com/${author.twitter}`} target="_blank" rel="noopener noreferrer nofollow">
-              <img src={avatar} />
-              {author.name}
-            </a>
-          </div>
+          {author && (
+            <div className="author">
+              <a href={`https://twitter.com/${author.twitter}`} target="_blank" rel="noopener noreferrer nofollow">
+                <img src={avatar} />
+                {author.name}
+              </a>
+            </div>
+          )}
 
           <div className="writing-container">
             <ReactMarkdown
-              source={content}
-              escapeHtml={false}
-              renderers={{
+              rehypePlugins={[rehypeRaw]}
+              components={{
                 code: CodeBlock,
-                link: props => {
-                  if (!props.href.startsWith('http')) {
+                a: props => {
+                  if (!props.href || !props.href.startsWith('http')) {
                      return props.href;
                   }
 
                   return <a href={props.href} rel="nofollow noreferrer noopener" target="_blank">{props.children}</a>;
                 }
               }}
-            />
+            >
+              {content}
+            </ReactMarkdown>
 
             <div className="twitter-follow">
               If you have any questions or comments, for now you can reach out to me on {' '}
@@ -62,12 +66,20 @@ function Writing({ content, data }) {
   )
 }
 
-Writing.getInitialProps = async (context) => {
-  const { slug } = context.query
-  const content = await import(`../../writings/${slug}.md`)
-  const data = matter(content.default)
+export async function getServerSideProps(context) {
+  const { slug } = context.params
+  const post = writings.find(w => w.slug === slug)
 
-  return { ...data }
+  if (!post) {
+    return { notFound: true }
+  }
+
+  return {
+    props: {
+      content: post.content,
+      data: post.data,
+    },
+  }
 }
 
 export default Writing

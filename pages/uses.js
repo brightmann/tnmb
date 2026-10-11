@@ -75,15 +75,17 @@ function Uses({ og }) {
   );
 }
 
-Uses.getInitialProps = () => {
+export async function getServerSideProps() {
   return {
-    data: {
-      og: {
-        description: "What Timothy uses on a daily basis.",
-        image: "https://timothycurchod.com/og/Capture-react-tdd.png",
+    props: {
+      data: {
+        og: {
+          description: "What Timothy uses on a daily basis.",
+          image: "https://timothycurchod.com/og/Capture-react-tdd.png",
+        },
       },
     },
   };
-};
+}
 
 export default Uses;

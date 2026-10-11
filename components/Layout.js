@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Grid, Row, Col } from 'react-flexbox-grid'
+import { Grid, Row, Col } from './flexbox-grid'
 import { Sun, Moon } from 'react-feather'
 import Link from 'next/link'
 
