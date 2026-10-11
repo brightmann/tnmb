@@ -1,9 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
-import Head from 'next/head'
 import { Row, Col } from '../components/flexbox-grid'
 
 import Layout from '../components/Layout'
+import Pagination, { POSTS_PER_PAGE, getTotalPages } from '../components/Pagination'
 import { writings as allWritings } from '../lib/generated-posts'
 
 function formatDate(date) {
@@ -13,12 +13,15 @@ function formatDate(date) {
   return today.toLocaleDateString("en-US", options);
 }
 
-function Homepage({ writings }) {
+export function WritingsList({ writings, page }) {
+  const totalPages = getTotalPages(writings.length)
+  const paged = writings.slice((page - 1) * POSTS_PER_PAGE, page * POSTS_PER_PAGE)
+
   return (
     <>
       <Layout isHomepage>
         <Row>
-          {writings.map(({ data, slug }) => {
+          {paged.map(({ data, slug }) => {
             const { title, date } = data
 
             return (
@@ -42,6 +45,7 @@ function Homepage({ writings }) {
             )
           })}
         </Row>
+        <Pagination currentPage={page} totalPages={totalPages} />
       </Layout>
     </>
   )
@@ -55,7 +59,11 @@ export async function getServerSideProps() {
   return {
     props: {
       writings,
+      page: 1,
     },
   }
 }
-export default Homepage
+
+export default function Homepage({ writings, page }) {
+  return <WritingsList writings={writings} page={page} />
+}
